@@ -17,11 +17,13 @@ const initialSteps = [
 
 // Draggable step card component
 const StepCard = ({ step, index, moveStep }) => {
-  const [, ref] = useDrag({
+  const [{ isDragging }, ref] = useDrag({
     type: ItemTypes.STEP,
     item: { index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
   });
-
   const [, drop] = useDrop({
     accept: ItemTypes.STEP,
     hover: (draggedItem) => {
@@ -31,12 +33,17 @@ const StepCard = ({ step, index, moveStep }) => {
       }
     },
   });
-
+  const cardStyle = {
+    padding: "16px",
+    marginBottom: "8px",
+    backgroundColor: isDragging ? "#f0f0f0" : "#fff", // Light grey when dragging
+    boxShadow: isDragging ? "0 4px 8px rgba(0, 0, 0, 0.3)" : "none", // Drop shadow when dragging
+    opacity: isDragging ? 0.5 : 1, // Reduce opacity when dragging
+    transform: isDragging ? "scale(1.02)" : "scale(1)", // Slightly increase size when dragging
+    transition: "all 0.2s ease", // Smooth transition
+  };
   return (
-    <Card
-      ref={(node) => ref(drop(node))}
-      style={{ padding: "16px", marginBottom: "8px" }}
-    >
+    <Card ref={(node) => ref(drop(node))} style={cardStyle}>
       <Typography variant="body1">{step.content}</Typography>
     </Card>
   );

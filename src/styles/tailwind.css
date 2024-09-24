@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+/* / *----- Color variables- */
+-- black_900: #000000;
+-- blue_gray_100_33: #d9d9d933;
+-- blue_gray_400: #8a8a8a;
+-- blue_gray_400_01: #8b8b8b;
+-- blue_gray_900: #313338;
+-- gray_100: #f7f7f7;
+-- gray_100_01: #f3f3f3;
+-- gray_200: #e8e8e8;
+-- gray_300: #e2e2e2;
+-- gray_300_01: #e1e1e1;
+-- gray_300_02: #dedede;
+-- gray_50: #fcfcfc;
+-- gray_800: #4e4e4e;
+-- gray_800_01: #383838;
+-- gray_900: #1e1e1e;
+-- gray_900_01: #121212;
+-- gray_900_02: #161616;
+-- gray_900_03: #292929;
+-- light_green_a700: #49da21;
+-- red_a200: #ff5757;
+-- white_a700: #ffffff;
+
+/* -Border radius variables ------* / */
+-- radius-xs: 4px;
+-- radius-sm: 6px;
+-- radius-md: 8px;
+-- radius-1g: 16px;
+-- radius-x1: 20px;
+
+/* / *------ Spacing variables ------* / */
+-- space-xs: 0.38rem;
+-- space-sm: 0.44rem;
+-- space-md: 0.5rem;
+-- space-1g: 0.56rem;
+-- space-xl: 0.63rem;
+-- space-2x1: 0.75rem;
+-- space-3x1: 1rem;
+-- space-4x1: 1.25rem;
+-- space-5x1: 1.88rem;
+-- space-6x1: 2rem;
+}
+[type="text"],
+input: where(: not([ type])),
+[type="email"],
+[type="url"],
+[ type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+appearance: initial;
+background-color: initial;
+border: initial;
+border-width: 0;
+}
+}
+@layer components {
+/* Container CSS */
+.container-xs {
+@apply w-full mx-auto max-w-[47.88rem];}}
