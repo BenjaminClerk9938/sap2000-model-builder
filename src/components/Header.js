@@ -30,7 +30,7 @@ const Header = ({ darkMode, handleThemeChange }) => {
       </Box>
       <Box
         display="flex"
-        alignItems="start"
+        alignItems="center"
         textAlign={"left"}
         justifyContent="space-between"
       >
