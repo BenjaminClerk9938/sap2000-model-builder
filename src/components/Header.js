@@ -28,7 +28,12 @@ const Header = ({ darkMode, handleThemeChange }) => {
           PM/PV Analysis
         </Button>
       </Box>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box
+        display="flex"
+        alignItems="start"
+        textAlign={"left"}
+        justifyContent="space-between"
+      >
         <Button onClick={handleThemeChange} size="small">
           {darkMode ? <Brightness5Icon /> : <Brightness7Icon />}
         </Button>

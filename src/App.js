@@ -17,6 +17,7 @@ import { Title } from "@mui/icons-material";
 import ModifiedTitle from "./components/ModifiedTitle";
 import InputField from "./components/inputFields";
 import ModifiedProgressBar from "./components/modifiedProgressbar";
+import ProjectsComponent from "./components/ProjectsComponent/index";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,27 +32,8 @@ function App() {
       <CssBaseline />
       <Container sx={{ padding: "20px", maxWidth: "762px" }}>
         <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
-        <ModifiedTitle />
-        <InputField />
-        <Box display="flex" gap={2} mb={4}>
-          <CardSelector />
-        </Box>
-        <ModifiedProgressBar />
-        {/* Steps and Output Sections */}
-
-        <Grid
-          container
-          spacing={6}
-          display="flex"
-          justifyContent={["center", "space-between"]}
-        >
-          <Grid item xs={12} md={7}>
-            <Steps />
-          </Grid>
-          <Grid item xs={12} md={5}>
-            <Output />
-          </Grid>
-        </Grid>
+        <ProjectsComponent />
+        <div style={{width: "100%", borderBottom: '1px solid #8B8B8B', padding: '1rem 0' }} ></div>
       </Container>
     </ThemeProvider>
   );
